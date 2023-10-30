@@ -1,13 +1,15 @@
-import React from 'react'
 
-const page = () => {
+"use client"
+import React, { useState } from "react";
+const page =()=>{ 
+ let [marks , setMarks] =useState(80)
   return (
-    <div>
-      <div id='main'>
-      <div id='nav'>Page</div>
-      </div>
-     
-    </div>
+  <div>
+    <h1>My Score is {marks} </h1>
+    <button id='btn'  onClick={()=>{
+      setMarks(92)
+    }}>Change</button>
+  </div>
   )
 }
 

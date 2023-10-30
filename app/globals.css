@@ -29,10 +29,23 @@ body {
   height: 100vh;
 }
 
-#nav
+h1
 {
-  color: white;
-  font-size: 2vw;
+  color: #1f1f1c;
+  font-size:4vw;
   font-weight: 1;
   margin-left: 20px;
+}
+
+#btn{
+  color: wheat;
+  background-color: rgb(128, 106, 106);
+  border-radius: 10px;
+  font-size: 1vw;
+  margin-top:10px ;
+  margin-left: 10px;
+  padding: 4px;
+  text-transform: uppercase;
+  border: 1px solid black;
+  
 }
