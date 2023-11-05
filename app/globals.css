@@ -20,10 +20,20 @@
 body {
   margin: 0;
   padding: 0;
-  color: #f0f038;
+  box-sizing: border-box;
+
+  
 }
 
-h1
+
+
+h1{
+  
+  background-color: rgb(24, 49, 24);
+
+}
+
+/* h1
 {
  
   font-size:5vw;
@@ -61,4 +71,4 @@ h2
   font-weight: normal;
   padding-left: 20px;
   background-color: rgb(28, 28, 31);
-}
+} */
