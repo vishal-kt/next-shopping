@@ -8,25 +8,43 @@ import { render } from 'react-dom'
   const [desc, setDesc] = useState("")
   const [mainTask, setMainTask] = useState([])
   const submitHandler=(e)=>{
-    e.preventDefault()
+    e.preventDefault();
    
-    setMainTask([...mainTask,{title,desc}])
+    setMainTask([...mainTask,{title,desc}]);
 
-    setTitle("")
-    setDesc("")
+    setTitle("") ;
+    setDesc("");
+  };
 
-
-  }
-
+  
   let renderTask =<h2 className='text-cyan-50'>No Task Available </h2>;
 
-  renderTask = mainTask.map((t,i)=>{
+  const deleteHandler =(i)=>{
 
-    return <div className='flex justify-between'>
-      <h3 className='text-xl font-semibold'>{t.title}</h3>
-      <h4>{t.desc}</h4>
-    </div>
-  })
+      let copyTask =[...mainTask]
+      copyTask.splice(i,1)
+      setMainTask(copyTask)
+  }
+  if(mainTask.length>0){
+    renderTask = mainTask.map((t,i)=>{
+
+      return (
+        <li key={i} className='flex items-center justify-between mb-5'>
+            <div className='flex items-center justify-between  w-2/3'>
+            <h5 className='text-2xl font-semibold'>{t.title}</h5>
+            <h6 className='text-lg font-semibold'>{t.desc}</h6>
+          </div>
+          <button
+          onClick={
+            ()=>{
+              deleteHandler(i)
+            }
+          }
+          className='bg-red-400 text-white px-4 py-2 rounded font-bold'>Delete</button>
+        </li>
+      );
+    });
+  }
   
    return (
    <>
