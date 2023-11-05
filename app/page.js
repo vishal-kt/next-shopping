@@ -10,13 +10,24 @@ import { render } from 'react-dom'
   const submitHandler=(e)=>{
     e.preventDefault()
    
-    
+    setMainTask([...mainTask,{title,desc}])
+
     setTitle("")
     setDesc("")
 
+
   }
 
-  let renderTask =<h2 className='text-cyan-50'>No Task Available </h2>
+  let renderTask =<h2 className='text-cyan-50'>No Task Available </h2>;
+
+  renderTask = mainTask.map((t,i)=>{
+
+    return <div className='flex justify-between'>
+      <h3 className='text-xl font-semibold'>{t.title}</h3>
+      <h4>{t.desc}</h4>
+    </div>
+  })
+  
    return (
    <>
       <h1 id='name' className='p-5 text-5xl
@@ -44,7 +55,7 @@ import { render } from 'react-dom'
       </form>
       <hr/>
 
-      <div className='p-8 bg-slate-500'>{renderTask}</div>
+      <div className='p-8 bg-slate-500'><ul>{renderTask}</ul></div>
    </>
   
 
